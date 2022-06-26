@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML FORM</title>
+    <style>
+
+        body {
+            padding: 10px 50px;
+        }
+
+        .design {
+            font-size: 20px;
+         }
+
+         .design input {
+            width: 50%;
+            padding: 12px 20px;
+            border: 1px solid blue;
+            margin: 14px;
+            border-radius: 4px;
+            font-size: 15px;}
+
+        .error {
+            color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <h1>REGISTRATION FORM.</h1>
+    <form aciton ="/myaction.php" name="myForm" onsubmit="return validateForm()" method="post">
+        
+        //For name 
+        <div class="design" id="name">
+            Name: <input type="text" name="fname" ><b><span class="formerror"> </span></b>
+        </div>
+
+        //For Email.
+        <div class="design" id="email">
+            Email: <input type="email" name="femail" ><b><span class="formerror"> </span></b>
+        </div>
+
+        //Gender choice.
+        <div  required>
+        Gender: <label for="gender-male">Male</label>
+        <input id="1" type="radio" name="gender-choice" value="choice-1">
+        <label for="gender-female">Female</label>
+        <input id="2" type="radio" name="gender-choice" value="choice-2">
+        <label for="gender-other">Other</label>
+        <input id="3" type="radio" name="gender-choice" value="choice-3">
+        </div>
+        <div class="design" id="box">
+
+        //Terms and conditions.
+          I agree to all the terms and conditions<input type="checkbox" name="terms-Cond" required><span class="formerror"></span>
+        </div>
+
+        //Submit button.
+        <input class="but" type="submit" value="Submit">
+    </form>
+</body>
+
+<script>
+    //Function to reset the errors after Submission.
+function reset(){
+    errors = document.getElementsByClassName('formerror');
+    for(let item of errors){
+        item.innerHTML = "";}
+    }
+
+    //This function shows error.
+function seterror(id, error){
+    //sets error inside tag of id 
+    element = document.getElementById(id);
+    element.getElementsByClassName('formerror')[0].innerHTML = error;}
+
+    //Form Validation.
+function validateForm(){
+    var returnval = true;
+    reset();
+
+   //name
+    var name = document.forms['myForm']["fname"].value;
+    if (name.length == 0){
+        seterror("name", "*Please fill out this field.");
+        returnval = false;}
+    else if(name.length < 3){
+        seterror("name", "*Name should be atleast 3 characters.");
+        returnval = false;}
+    else{
+       console.log("Name : "+name); 
+    }
+    
+    //email
+    var email = document.forms['myForm']["femail"].value;
+    if (email.length == 0){
+        seterror("email", "*Please fill out this field.");
+        returnval = false;}
+    else if(email.length < 11){
+        seterror("email", "*Email should be greater than 10 characters");
+        returnval = false;
+    }
+    else{
+        console.log("Email : "+email);
+    }
+
+    //gender
+    var gender = document.forms['myForm']["gender-choice"].value;
+    if(gender.value == 'choice-1'){
+        console.log("Gender : Male");
+    }
+    else if(gender.value == 'choice-2'){
+        console.log("Gender : Female");
+    }
+    else if(gender.value == 'choice-3'){
+        console.log("Gender : Other");
+    }
+    return returnval;
+}
+
+</script>
+</html>
