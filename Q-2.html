@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Gallery</title>
+    
+    <style>
+
+       .gallery img {
+        padding-left: 50px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        transition: 0.5s;
+        width: 20%;
+        }
+
+    @media only screen and (max-width: 600px) {
+    .gallery {
+      display: block;
+      margin: auto;
+      transition: 0.5s;
+      width: 60%;
+      }
+    }
+
+      .gallery img:hover{
+        transform: scale(1.1);
+      }
+      
+    </style>
+
+  </head>
+
+  <body>
+    <div class="gallery">
+      <a id="ref-1"><img id="1"></a>
+      <a id="ref-2"><img id="2"></a>
+      <a id="ref-3"><img id="3"></a>
+      <a id="ref-4"><img id="4"></a>
+      <a id="ref-5"><img id="5"></a>
+      <a id="ref-6"><img id="6"></a>
+      <a id="ref-7"><img id="7"></a>
+      <a id="ref-8"><img id="8"></a>
+    </div>
+
+    <script>
+      var data = {
+        p1:'https://cdn.wallpapersafari.com/70/87/H0G4wt.jpg',
+        p2:'https://st2.depositphotos.com/2001755/5408/i/600/depositphotos_54081723-stock-photo-beautiful-nature-landscape.jpg',
+        p3:'https://id-norway.com/wp-content/uploads/colombia-2429461_1280-600x600.jpg',
+        p4:'https://cdn.wallpapersafari.com/54/44/mF9Ztl.jpeg',
+        p5:'https://www.tourisme-lorraine.fr/wp-content/uploads/2016/02/88-tendon-cascade-de-tendon-gilles-pecqueur-600x600.jpg',
+        p6:'https://st.depositphotos.com/1054144/4016/v/600/depositphotos_40160207-stock-illustration-natural-green-background.jpg',
+        p7:'https://www.visitdenmark.com/sites/visitdenmark.com/files/styles/article_teaser/public/2019-03/moens-klint.jpg?h=229893dd&itok=VIte7dVT',
+        p8:'https://static5.depositphotos.com/1006362/508/i/600/depositphotos_5086331-stock-photo-river-on-sunset.jpg'
+      };
+
+      var img1 = document.getElementById('1');
+      var ref1 = document.getElementById('ref-1');
+      var img2 = document.getElementById('2');
+      var ref2 = document.getElementById('ref-2');
+      var img3 = document.getElementById('3');
+      var ref3 = document.getElementById('ref-3');
+      var img4 = document.getElementById('4');
+      var ref4 = document.getElementById('ref-4');
+      var img5 = document.getElementById('5');
+      var ref5 = document.getElementById('ref-5');
+      var img6 = document.getElementById('6');
+      var ref6 = document.getElementById('ref-6');
+      var img7 = document.getElementById('7');
+      var ref7 = document.getElementById('ref-7');
+      var img8 = document.getElementById('8');
+      var ref8 = document.getElementById('ref-8');
+
+      img1.src  = data.p1;
+      ref1.href = data.p1;
+      img2.src  = data.p2;
+      ref2.href = data.p2;
+      img3.src  = data.p3;
+      ref3.href = data.p3;
+      img4.src  = data.p4;
+      ref4.href = data.p4;
+      img5.src  = data.p5;
+      ref5.href = data.p5;
+      img6.src  = data.p6;
+      ref6.href = data.p6;
+      img7.src  = data.p7;
+      ref7.href = data.p7;
+      img8.src  = data.p8;
+      ref8.href = data.p8;
+
+    </script>
+  </body>
+</html>
