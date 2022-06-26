@@ -6,11 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HTML FORM</title>
     <style>
-
         body {
             padding: 10px 50px;
         }
-
+        
         .design {
             font-size: 20px;
          }
@@ -22,7 +21,7 @@
             margin: 14px;
             border-radius: 4px;
             font-size: 15px;}
-
+        
         .error {
             color: darkred;
         }
@@ -32,17 +31,14 @@
     <h1>REGISTRATION FORM.</h1>
     <form aciton ="/myaction.php" name="myForm" onsubmit="return validateForm()" method="post">
         
-        //For name 
         <div class="design" id="name">
             Name: <input type="text" name="fname" ><b><span class="formerror"> </span></b>
         </div>
-
-        //For Email.
+        
         <div class="design" id="email">
             Email: <input type="email" name="femail" ><b><span class="formerror"> </span></b>
         </div>
-
-        //Gender choice.
+        
         <div  required>
         Gender: <label for="gender-male">Male</label>
         <input id="1" type="radio" name="gender-choice" value="choice-1">
@@ -51,13 +47,11 @@
         <label for="gender-other">Other</label>
         <input id="3" type="radio" name="gender-choice" value="choice-3">
         </div>
+        
         <div class="design" id="box">
-
-        //Terms and conditions.
-          I agree to all the terms and conditions<input type="checkbox" name="terms-Cond" required><span class="formerror"></span>
+         I agree to all the terms and conditions<input type="checkbox" name="terms-Cond" required><span class="formerror"></span>
         </div>
-
-        //Submit button.
+        
         <input class="but" type="submit" value="Submit">
     </form>
 </body>
@@ -119,6 +113,5 @@ function validateForm(){
     }
     return returnval;
 }
-
 </script>
 </html>
