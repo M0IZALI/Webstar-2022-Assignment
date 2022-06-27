@@ -6,24 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Patterns.</title>
   </head>
-  <style>
-    #rotate{
-      direction: ltr;}
-  </style>
   <body>
     <script>
       //1st Pattern
+      //loop for the number of rows, new lines.
       for(let x=1; x<=6; x++){
+      //loop for printing stars.
       for(let y=1; y<=x; y++){
       document.write('*');}
+      // new line.
       document.write('</br>');}
-    </script>
-   <script id="rotate">
-      //2nt Pattern
+     
+      //2nd Pattern
+      //loop for the number of rows, new lines.
       for(let x=1; x<=6; x++){
-      for(let y=1; y<=x; y++){
+      //loop for printing spaces.
+      for(let y=0; y<6-x; y++){
+      document.write('\xa0\xa0');}
+      //loop for printing stars.
+      for(let z=0; z<x; z++){
       document.write('*');}
-      document.write('</br>');}
+      // new line.
+      document.write('<br>')}
     </script>
   </body>
 </html>
